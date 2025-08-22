@@ -509,7 +509,7 @@
         function createCharts(results, params) {
             // Temperature chart
             const tempCtx = document.getElementById('tempChart').getContext('2d');
-            if (window.tempChart) window.tempChart.destroy();
+            if (window.tempChart instanceof Chart) window.tempChart.destroy();
             
             window.tempChart = new Chart(tempCtx, {
                 type: 'line',
@@ -558,7 +558,7 @@
             
             // Flow chart
             const flowCtx = document.getElementById('flowChart').getContext('2d');
-            if (window.flowChart) window.flowChart.destroy();
+            if (window.flowChart instanceof Chart) window.flowChart.destroy();
             
             window.flowChart = new Chart(flowCtx, {
                 type: 'line',
